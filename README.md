@@ -1,5 +1,15 @@
 # udaconnect-kafka
 
+## Environment set-up
+
+For this project you need to...
+
+- Install Docker
+- Set up a DockerHub account
+- Set up kubectl
+- Install VirtualBox with at least version 6.0
+- Install Vagrant with at least version 2.0
+
 [MISSING]
 
 ##How to set up Kafka in Kubernetes
