@@ -1,0 +1,8 @@
+Justification of design decisions:
+
+RESTApi is the industry standard and the first choice if are no special reasons to decide differently.
+It is used as message passing technique between the frontend client and connection-microservice and between the client and
+the person-microservice.
+I expect a large volume of location data from app-users to be ingested, therefore, the message queue Kafka, which allows to handle multiple requests
+in parallel. To optimize performance, I use gRPC as message passing technique here since it is faster and the restrictions with regards to data format
+are an useful error testing mechanism. 

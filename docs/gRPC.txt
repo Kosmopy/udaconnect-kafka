@@ -1,0 +1,9 @@
+As defined in kafka-producer/app/item.proto
+
+gRPC accepts and forwards messages of the following structure:
+
+message ItemMessage {
+  int32 person_id = 1;
+  int32 latitude = 55;
+  int32 longitude = 120;
+}
