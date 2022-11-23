@@ -12,7 +12,7 @@ For this project you need to...
 
 [MISSING]
 
-##How to set up Kafka in Kubernetes
+## How to set up Kafka in Kubernetes
 
 1. Installation
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
