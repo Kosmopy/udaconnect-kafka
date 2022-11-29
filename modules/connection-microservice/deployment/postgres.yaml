@@ -65,7 +65,7 @@ spec:
           - name: POSTGRES_USER
             valueFrom:
               configMapKeyRef:
-                name: db-configmap
+                name: db-env
                 key: DB_USERNAME
           - name: POSTGRES_PASSWORD
             valueFrom:
@@ -75,12 +75,12 @@ spec:
           - name: POSTGRES_DB
             valueFrom:
               configMapKeyRef:
-                name: db-configmap
+                name: db-env
                 key: DB_NAME
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
-              name: postgres
+              name: postgresdb
       volumes:
-        - name: postgres
+        - name: postgresdb
           persistentVolumeClaim:
             claimName: postgres-pv-claim
