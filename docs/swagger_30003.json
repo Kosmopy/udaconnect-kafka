@@ -1,0 +1,50 @@
+	
+swagger	"2.0"
+basePath	"/"
+paths	
+/api/persons	
+post	
+responses	
+200	
+description	"Success"
+operationId	"post_persons_resource"
+tags	
+0	"UdaConnect"
+get	
+responses	
+200	
+description	"Success"
+operationId	"get_persons_resource"
+tags	
+0	"UdaConnect"
+/api/persons/{person_id}	
+parameters	
+0	
+in	"path"
+description	"Unique ID for a given Person"
+name	"person_id"
+required	true
+type	"string"
+get	
+responses	
+200	
+description	"Success"
+operationId	"get_person_resource"
+tags	
+0	"UdaConnect"
+info	
+title	"UdaConnect API"
+version	"0.1.0"
+produces	
+0	"application/json"
+consumes	
+0	"application/json"
+tags	
+0	
+name	"UdaConnect"
+description	"Connections via geolocation."
+responses	
+ParseError	
+description	"When a mask can't be parsed"
+MaskError	
+description	"When any error occurs on mask"
