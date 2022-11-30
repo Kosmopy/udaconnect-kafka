@@ -39,7 +39,7 @@ connect: connection refused" occurs:
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 kubectl config view --raw > ~/.kube/config
 
-## 4. Deploy applications
+## 5. Deploy applications
 
 Run kubectl apply -f deployment/
 
@@ -48,11 +48,11 @@ active services: kubectl get services
 
 If errors occur, you can look into the logs of an pod: kubectl logs <POD_NAME>
 
-## 5. Seed the database
+## 6. Seed the database
 
 Seed db with following command: sh scripts/run_db_command.sh <POD_NAME>
 
-## 6. Test if the applications work
+## 7. Test if the applications work
 
 The following pages should be accessible by web browser:
 
