@@ -30,4 +30,15 @@ export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 kubectl config view --raw > ~/.kube/config
 
 
+## Test if it works
+Verifying it Works
+
+The following pages should be accessible by web browser:
+
+    http://localhost:30000/ - Frontend
+    http://localhost:30003/ - Persons API
+    http://localhost:30002/ - Connection API
+    http://localhost:30005/ - Location API
+    
+
 [MISSING]
