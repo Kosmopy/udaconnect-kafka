@@ -1,6 +1,6 @@
 # udaconnect-kafka
 
-## Environment set-up
+## 1. Environment set-up
 
 For this project you need to...
 
@@ -10,16 +10,26 @@ For this project you need to...
 - Install VirtualBox with at least version 6.0
 - Install Vagrant with at least version 2.0
 
-[MISSING]
+## 2. Initialize K3s
 
-## How to set up Kafka in Kubernetes
+To use vagrant with VirtualBox, run the command "vagrant up" in the folder where the Vagrantfile is saved.
+ 
+ vagrant ssh //SSH into the Vgrant environment
+ sudo su // get access
 
-1. Installation
+## 3. Configure kubectl
+
+Configure your kubetcl ~/.kube/config with the info from the K3s that you can access with:
+sudo cat /etc/rancher/k3s/k3s.yaml
+
+## 4. Set up Kafka in Kubernetes
+
+A. Installation
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 $ chmod 700 get_helm.sh
 $ ./get_helm.sh
 
-2. Run Kafka with helm
+B. Run Kafka with helm
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 $ helm install kafka-release bitnami/kafka
 
@@ -29,9 +39,20 @@ connect: connection refused" occurs:
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 kubectl config view --raw > ~/.kube/config
 
+## 4. Deploy applications
 
-## Test if it works
-Verifying it Works
+Run kubectl apply -f deployment/
+
+You can see active pods: kubectl get pods
+active services: kubectl get services
+
+If errors occur, you can look into the logs of an pod: kubectl logs <POD_NAME>
+
+## 5. Seed the database
+
+Seed db with following command: sh scripts/run_db_command.sh <POD_NAME>
+
+## 6. Test if the applications work
 
 The following pages should be accessible by web browser:
 
@@ -40,5 +61,3 @@ The following pages should be accessible by web browser:
     http://localhost:30002/ - Connection API
     http://localhost:30005/ - Location API
     
-
-[MISSING]
